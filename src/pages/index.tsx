@@ -8,9 +8,8 @@ import {
 	TabPanels,
 	Icon,
 } from "@chakra-ui/react";
-import { MdOutlineHourglassEmpty } from "react-icons/md";
-import { BsStopwatch } from "react-icons/bs";
-import { Stopwatch, Timer } from "../components";
+import { BsStopwatch, BsHourglass } from "react-icons/bs";
+import { Stopwatch, Timer } from "@/components";
 
 const Home: React.FC = () => {
 	return (
@@ -20,11 +19,11 @@ const Home: React.FC = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Flex h="100vh" alignItems="center" justifyContent="center">
-				<Flex direction="column" border="1px" h="30vh" w="40vw">
+				<Flex direction="column" border="1px" h="250px" w="500px">
 					<Tabs isFitted>
 						<TabList>
 							<Tab>
-								<Icon as={MdOutlineHourglassEmpty} /> Timer
+								<Icon as={BsHourglass} /> Timer
 							</Tab>
 							<Tab>
 								<Icon as={BsStopwatch} mr="0.3rem" /> Stopwatch

@@ -3,7 +3,7 @@ import { Flex, Text, Button, Divider } from "@chakra-ui/react";
 import { Settings } from ".";
 
 const Stopwatch: React.FC = () => {
-	const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
+	const [time, setTime] = useState(0);
 	const [isActive, setIsActive] = useState(false);
 
 	useEffect(() => {
@@ -11,44 +11,27 @@ const Stopwatch: React.FC = () => {
 
 		if (isActive) {
 			interval = setInterval(() => {
-				setTime((prevTime) => {
-					let {
-						hours,
-						minutes,
-						seconds,
-					}: { hours: number; minutes: number; seconds: number } = prevTime;
-
-					seconds++;
-
-					if (seconds === 60) {
-						seconds = 0;
-						minutes++;
-
-						if (minutes === 60) {
-							minutes = 0;
-							hours++;
-						}
-					}
-
-					return { hours, minutes, seconds };
-				});
+				setTime((prevTime: number) => prevTime + 1);
 			}, 1000);
 		}
 
 		return () => {
 			clearInterval(interval);
 		};
-	}, [isActive]);
+	}, [isActive, time]);
+
+	const hours = Math.floor(time / 3600);
+	const minutes = Math.floor((time % 3600) / 60);
+	const seconds = time % 60;
 
 	return (
 		<>
 			<Text fontSize="5xl">
-				{String(time.hours).padStart(2, "0")}:{" "}
-				{String(time.minutes).padStart(2, "0")}:{" "}
-				{String(time.seconds).padStart(2, "0")}
+				{String(hours).padStart(2, "0")}: {String(minutes).padStart(2, "0")}:{" "}
+				{String(seconds).padStart(2, "0")}
 			</Text>
 
-			<Divider />
+			<Divider m="0.5rem" />
 
 			<Flex justifyContent="space-between">
 				<Flex direction="row" alignItems="center">
@@ -64,7 +47,7 @@ const Stopwatch: React.FC = () => {
 					<Button
 						bg="gray.400"
 						onClick={() => {
-							setTime({ hours: 0, minutes: 0, seconds: 0 });
+							setTime(0);
 							setIsActive(false);
 						}}
 					>

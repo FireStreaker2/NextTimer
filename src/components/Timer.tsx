@@ -11,7 +11,7 @@ const Timer: React.FC = () => {
 
 		if (isActive && time > 0) {
 			interval = setInterval(() => {
-				setTime((prevTime) => prevTime - 1);
+				setTime((prevTime: number) => prevTime - 1);
 			}, 1000);
 		} else if (time === 0) {
 			setIsActive(false);
@@ -33,7 +33,7 @@ const Timer: React.FC = () => {
 				{String(seconds).padStart(2, "0")}
 			</Text>
 
-			<Divider />
+			<Divider m="0.5rem" />
 
 			<Flex justifyContent="space-between">
 				<Flex direction="row" alignItems="center">
