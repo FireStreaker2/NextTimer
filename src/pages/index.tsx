@@ -15,8 +15,26 @@ const Home: React.FC = () => {
 	return (
 		<>
 			<Head>
+				<meta charSet="UTF-8" />
+				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<meta
+					name="description"
+					content="Simple timer made with Next + ChakraUI"
+				/>
+				<meta name="keywords" content="FireStreaker2, NextTimer" />
+				<meta name="copyright" content="FireStreaker2" />
+				<meta property="og:title" content="NextTimer" />
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:description"
+					content="Simple timer made with Next + ChakraUI"
+				/>
+				<meta name="theme-color" content="#000000" />
+				<meta name="twitter:card" content="summary_large_image" />
+
 				<title>NextTimer</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" type="image/x-icon" href="/icon.svg" />
 			</Head>
 			<Flex h="100vh" alignItems="center" justifyContent="center">
 				<Flex direction="column" border="1px" h="250px" w="500px">
