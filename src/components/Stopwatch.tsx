@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Button, Divider, Flex, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { Flex, Text, Button, Divider } from "@chakra-ui/react";
 import { Settings } from ".";
 
 const Stopwatch: React.FC = () => {

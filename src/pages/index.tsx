@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
 import Head from "next/head";
 import {
-	Button,
 	Flex,
 	TabList,
 	Tab,
 	Tabs,
 	TabPanel,
 	TabPanels,
-	Text,
-	Divider,
-	IconButton,
-	useColorMode,
 	Icon,
 } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import { MdFullscreen, MdOutlineHourglassEmpty } from "react-icons/md";
+import { MdOutlineHourglassEmpty } from "react-icons/md";
 import { BsStopwatch } from "react-icons/bs";
 import { Stopwatch, Timer } from "../components";
 

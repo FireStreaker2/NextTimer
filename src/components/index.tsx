@@ -1,5 +1,5 @@
 import Stopwatch from "./Stopwatch";
-import Timer from "./Timer";
 import Settings from "./Settings";
+import Timer from "./Timer";
 
 export { Stopwatch, Timer, Settings };
